@@ -1,5 +1,5 @@
 const VENTAS_BASE = 5;
-const PORCENTAJE_COMISION = 0.1;
+const PORCENTAJE_COMISION = 0.10;
 
 function calcularComision (numeroVenta,precioProducto){
     let comision = 0;
@@ -7,7 +7,7 @@ function calcularComision (numeroVenta,precioProducto){
         let ventasExtra = numeroVenta-VENTAS_BASE;
         comision = ventasExtra*(precioProducto* PORCENTAJE_COMISION);
     }  
-    return comision
+    return comision;
 }
 
 function calcular (){
@@ -20,10 +20,18 @@ function calcular (){
     let numeroVentaStr = cmpNumeroVenta.value;
     let precioStr = cmpPrecio.value;
     //convertir de string  a float
-    let sueldoBaseEntero = parseFloat(sueldoBaseStr);
-    let numeroVentaEntero = parseFloat(numeroVentaStr);
-    let precioEntero = parseFloat(precioStr);
-    
-
+    let sueldoBaseDeci = parseFloat(sueldoBaseStr);
+    let numeroVentaDeci = parseFloat(numeroVentaStr);
+    let precioDeci = parseFloat(precioStr);
+    // calcular comision y el total
+    let comision = calcularComision(numeroVentaDeci,precioDeci);
+    let total = sueldoBaseDeci + comision;
+    //buscar id y  mostrar en pantalla
+    let spSueldoBase = document.getElementById("spSueldoBase");
+    let spComision = document.getElementById("spComision");
+    let spTotal = document.getElementById("spTotal");
+    spSueldoBase.textContent = sueldoBaseDeci;
+    spComision.textContent = comision;
+    spTotal.textContent = total;
 
 }
