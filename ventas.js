@@ -21,23 +21,37 @@ function calcular (){
    // let precioStr = cmpPrecio.value;
 
    //parte 6 mejorando el codigo
-    let sueldoBaseStr=recuperarTexto("txtSueldoBase");
-    let numeroVentaStr=recuperarTexto("txtVentas");
-    let precioStr = recuperarTexto("txtPrecio");
+    //let sueldoBaseStr=recuperarTexto("txtSueldoBase");
+    //let numeroVentaStr=recuperarTexto("txtVentas");
+    //let precioStr = recuperarTexto("txtPrecio");
 
     //convertir de string  a float
-    let sueldoBaseDeci = parseFloat(sueldoBaseStr);
-    let numeroVentaDeci = parseFloat(numeroVentaStr);
-    let precioDeci = parseFloat(precioStr);
+   // let sueldoBaseDeci = parseFloat(sueldoBaseStr);
+    //let numeroVentaDeci = parseFloat(numeroVentaStr);
+    //let precioDeci = parseFloat(precioStr);
+
+
+    // mejorando el codigo parte 7
+    let sueldoBaseDeci = recuperarFloat("txtSueldoBase");
+    let numeroVentaDeci = recuperarFloat("txtVentas");
+    let precioDeci = recuperarFloat("txtPrecio")
+
     // calcular comision y el total
     let comision = calcularComision(numeroVentaDeci,precioDeci);
     let total = sueldoBaseDeci + comision;
+
     //buscar id y  mostrar en pantalla
-    let spSueldoBase = document.getElementById("spSueldoBase");
-    let spComision = document.getElementById("spComision");
-    let spTotal = document.getElementById("spTotal");
-    spSueldoBase.textContent = sueldoBaseDeci;
-    spComision.textContent = comision;
-    spTotal.textContent = total;
+    //let spSueldoBase = document.getElementById("spSueldoBase");
+   // let spComision = document.getElementById("spComision");
+    //let spTotal = document.getElementById("spTotal");
+    //spSueldoBase.textContent = sueldoBaseDeci;
+    //spComision.textContent = comision;
+    //spTotal.textContent = total;
+
+    // mejorando el coidog parte 7
+
+    mostrarSpan("spSueldoBase",sueldoBaseDeci);
+    mostrarSpan("spComision",comision);
+    mostrarSpan("spTotal",total);
 
 }

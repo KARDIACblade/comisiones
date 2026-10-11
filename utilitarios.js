@@ -4,3 +4,20 @@ function recuperarTexto (idComponente){
     let valor = cmp.value
     return valor;
 }
+
+function recuperarEntero (idComponente){
+    let valorTexto = recuperarTexto(idComponente);
+    let valorEntero = parseInt(valorTexto);
+    return valorEntero;
+}
+ 
+function recuperarFloat (idComponente){
+    let valorText= recuperarTexto(idComponente);
+    let valorFloat=parseFloat(valorText);
+    return valorFloat;
+}
+
+function mostrarSpan (idComponente,valor){
+let cmp = document.getElementById(idComponente);
+cmp.textContent = valor;
+}
