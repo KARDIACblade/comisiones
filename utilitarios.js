@@ -5,12 +5,6 @@ function recuperarTexto (idComponente){
     return valor;
 }
 
-function recuperarEntero (idComponente){
-    let valorTexto = recuperarTexto(idComponente);
-    let valorEntero = parseInt(valorTexto);
-    return valorEntero;
-}
- 
 function recuperarFloat (idComponente){
     let valorText= recuperarTexto(idComponente);
     let valorFloat=parseFloat(valorText);
