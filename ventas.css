@@ -59,3 +59,11 @@ button:hover {
         font-size: 1.2rem;
     }
 }
+
+.error-msg {
+    color: red;
+    font-style: italic;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 8px;
+}
