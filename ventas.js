@@ -62,8 +62,8 @@ function calcular (){
     let total = sueldoBaseDeci + comision;
 
   
-    mostrarSpan("spSueldoBase",sueldoBaseDeci);
-    mostrarSpan("spComision",comision);
-    mostrarSpan("spTotal",total);
+mostrarSpan("spSueldoBase", "$" + sueldoBaseDeci.toFixed(2));
+mostrarSpan("spComision", "$" + comision.toFixed(2));
+mostrarSpan("spTotal", "$" + total.toFixed(2));
 
 }
