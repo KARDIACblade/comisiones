@@ -61,7 +61,7 @@ button:hover {
 }
 
 .error-msg {
-    color: red;
+    color:  #f87171;
     font-style: italic;
     font-size: 0.85rem;
     display: block;

@@ -1,0 +1,35 @@
+validaciones1.txt
+Quiero validar en JavaScript
+Reglas:inputs
+-mostrar mensaje debajo de cada input ( no usar alert)
+-el mensaje debe ser en color rojo y en cursive
+Validaciones:
+-solo numeros
+-maximo 5 digitos
+-No puede estar vacio
+Condiciones tecnicas:
+-usar los mismos Ids existentes: txtSueldoBase, txtPrecio, txtVentas.
+Usar eventos:
+-Onblur para validar cuando el usuario sale del input
+-no modificar ids existentes
+-mostrar errores en un element debajo del input
+
+Devuelveme solo las partes qe debo agregar o modificar (HTML, CSS Y JS ), NO TODO EL CODIGO.
+
+
+-------------
+
+
+validaciones2.txt
+Quiero validar en JavaScript un formulario con los inputs txtSueldoBase, txtVentas y txtPrecio.
+Reglas:
+- Validar al presionar el botón Calcular y también con onblur.
+- Mostrar el mensaje de error debajo de cada input (sin alert), en rojo y cursiva.
+Validaciones:
+- Campo obligatorio, solo números positivos (máximo 2 decimales).
+- txtSueldoBase: mínimo 1, máximo 99999.
+- txtVentas: mínimo 0, máximo 99999.
+- txtPrecio: mínimo 1, máximo 99999.
+Condiciones técnicas:
+- No modificar los IDs existentes.
+- Devuélveme solo las partes que debo agregar o modificar (HTML, CSS y JS).

@@ -11,43 +11,36 @@ function calcularComision (numeroVenta,precioProducto){
 }
 //validar con IA
 
-function validarCampo(idInput, idSpanError) {
-    let valor = recuperarTexto(idInput).trim(); //[cite: 2]
-    let soloNumeros = /^[0-9]+$/;
+
+// Validaciones (hechas con IA)
+function validarCampo(idInput, idSpanError, min, max) {
+    let valor = recuperarTexto(idInput).trim();
+    let numeroValido = /^[0-9]+(\.[0-9]{1,2})?$/;
 
     if (valor === "") {
-        mostrarSpan(idSpanError, "Este campo no puede estar vacío."); //[cite: 2]
+        mostrarSpan(idSpanError, "Este campo no puede estar vacío.");
         return false;
-    } else if (!soloNumeros.test(valor)) {
-        mostrarSpan(idSpanError, "Solo se permiten números."); //[cite: 2]
-        return false;
-    } else if (valor.length > 5) {
-        mostrarSpan(idSpanError, "Máximo 5 dígitos."); //[cite: 2]
-        return false;
-    } else {
-        mostrarSpan(idSpanError, ""); // Limpia el error[cite: 2]
-        return true;
     }
+    if (!numeroValido.test(valor)) {
+        mostrarSpan(idSpanError, "Solo números positivos (máx. 2 decimales).");
+        return false;
+    }
+    let numero = parseFloat(valor);
+    if (numero < min) {
+        mostrarSpan(idSpanError, "El valor mínimo es " + min + ".");
+        return false;
+    }
+    if (numero > max) {
+        mostrarSpan(idSpanError, "El valor máximo es " + max + ".");
+        return false;
+    }
+    mostrarSpan(idSpanError, "");
+    return true;
 }
 
-
- function validarVentas() {
- return validarCampo("txtVentas", "errVentas");
- }
- 
- // funciones ia
- function validarSueldoBase() {
-    return validarCampo("txtSueldoBase", "errSueldoBase");
-}
-
-function validarVentas() {
-    return validarCampo("txtVentas", "errVentas");
-}
-
-function validarPrecio() {
-    return validarCampo("txtPrecio", "errPrecio");
-}
-
+function validarSueldoBase() { return validarCampo("txtSueldoBase", "errSueldoBase", 1, 99999); }
+function validarVentas()     { return validarCampo("txtVentas", "errVentas", 0, 99999); }
+function validarPrecio()     { return validarCampo("txtPrecio", "errPrecio", 1, 99999); }
 function calcular (){
     //validar CON IA
     // Se cambió para validar los 3 inputs antes de calcular[cite: 5]
